@@ -1,1 +1,18 @@
 flutter/ephemeral
+# Flutter/Dart related
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Exclude generated files for Flutter web
+/build/web/
