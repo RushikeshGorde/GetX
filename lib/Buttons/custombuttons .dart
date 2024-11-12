@@ -12,52 +12,50 @@ class CustomButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 16.0,
-      runSpacing: 16.0,
-      alignment: WrapAlignment.center,
-      children: [
-        ElevatedButton.icon(
-          onPressed: onSavePressed,
-          // icon: const Icon(Icons.save, color: Colors.white,),
-          label: const Text(
-            'Save',
-            style: TextStyle(fontSize: 16,color: Colors.white),
-          ),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFFA0C8EB), 
-            padding: const EdgeInsets.symmetric(
-              horizontal: 32.0,
-              vertical: 12.0,
-            ),
-            shape: RoundedRectangleBorder(
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+           MouseRegion(
+            cursor: SystemMouseCursors.click,
+            onEnter: (_) => {},
+            onExit: (_) => {},
+            child: InkWell(
+              onTap: onCancelPressed,
+              hoverColor: const Color.fromARGB(255, 34, 255, 0).withOpacity(0.4), // Hover effect color
               borderRadius: BorderRadius.circular(8),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                child: const Text(
+                  'Clear',
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
             ),
-            elevation: 2,
           ),
-        ),
-        ElevatedButton.icon(
-          onPressed: onCancelPressed,
-          icon: const Icon(Icons.cancel,color: Colors.white,),
-          label: const Text(
-            'Cancel',
-            style: TextStyle(fontSize: 16,color: Colors.white),
-            
-            
-          ),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Color.fromARGB(255, 216, 32, 32),  // #a0c8eb color for Cancel button
-            padding: const EdgeInsets.symmetric(
-              horizontal: 32.0,
-              vertical: 12.0,
+           const SizedBox(width: 10),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            onEnter: (_) => {},
+            onExit: (_) => {},
+            child: InkWell(
+              onTap: onSavePressed,
+              hoverColor: const Color.fromARGB(255, 62, 237, 27).withOpacity(0.4), // Hover effect color
+              borderRadius: BorderRadius.circular(3),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                child: const Text(
+                  'Save',
+                  style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                ),
+              ),
             ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            elevation: 2,
           ),
-        ),
-      ],
+         
+         
+        ],
+      ),
     );
   }
 }

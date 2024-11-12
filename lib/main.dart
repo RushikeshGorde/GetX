@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:getx_app/MainDesignationScreen.dart';
+import 'package:getx_app/designation.dart';
+// import 'package:getx_app/designationmodel.dart';
 import 'package:getx_app/exmaple_two.dart';
 import 'package:getx_app/favrateapp.dart';
 import 'package:getx_app/home_screen.dart';
 import 'package:getx_app/imagepicker.dart';
 import 'package:getx_app/location.dart';
+import 'package:getx_app/locationlistpage.dart';
 import 'package:getx_app/login_homeScreen.dart';
+import 'package:getx_app/navbar/navbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,12 +43,18 @@ class MyApp extends StatelessWidget {
         
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       // home: HomeScreen(),
       // home: ExampleTwo(),
       // home: FavApp(),
       // home: Imagepicker(),
       // home: AuthPage() ,
-      home: LocationView() ,
+      // home: LocationView() ,
+      // home: LocationWithoutIcon() ,
+      // home: LocationListPage() ,
+      // home: DesignationScreen() ,
+      // home: ResponsiveNavBar(),
+      home: MainDesignationScreen(),
     );
   }
 }
